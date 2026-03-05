@@ -1,0 +1,546 @@
+<!-- ✅ SOLUTECH RENOV — Compatible Systeme.io -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+/* ── LANDING ── */
+.sr-landing{font-family:'DM Sans',sans-serif;background:#0f1a10;color:white;padding:80px 40px;text-align:center;position:relative;overflow:hidden;}
+.sr-landing::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(106,176,35,0.15) 0%,transparent 70%);pointer-events:none;}
+.sr-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;}
+.sr-logo{display:flex;justify-content:center;margin-bottom:36px;}
+.sr-logo img{height:60px;width:auto;}
+.sr-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(106,176,35,0.12);border:1px solid rgba(106,176,35,0.3);color:#6ab023;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:28px;}
+.sr-dot{width:5px;height:5px;background:#6ab023;border-radius:50%;animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.sr-landing h1{font-family:'Fraunces',serif;font-size:clamp(36px,6vw,64px);font-weight:900;color:white;line-height:1.05;letter-spacing:-.025em;margin-bottom:20px;}
+.sr-landing h1 em{font-style:italic;color:#6ab023;}
+.sr-desc{font-size:17px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;}
+.sr-desc strong{color:rgba(255,255,255,.85);font-weight:600;}
+.sr-btn{display:inline-flex;align-items:center;gap:10px;background:#6ab023;color:white;font-size:16px;font-weight:700;padding:18px 38px;border-radius:12px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s;box-shadow:0 4px 24px rgba(106,176,35,.35);}
+.sr-btn:hover{background:#4e8118;transform:translateY(-2px);box-shadow:0 12px 40px rgba(106,176,35,.5);}
+.sr-trust{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:20px;flex-wrap:wrap;}
+.sr-trust span{font-size:12px;color:rgba(255,255,255,.35);font-weight:500;}
+.sr-stats{display:flex;align-items:center;margin:40px auto 0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;width:fit-content;}
+.sr-stat{padding:16px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.07);}
+.sr-stat:last-child{border-right:none;}
+.sr-stat .num{font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:white;display:block;line-height:1;margin-bottom:3px;}
+.sr-stat .lbl{font-size:11px;color:rgba(255,255,255,.35);display:block;}
+
+/* ── AVIS ── */
+.sr-reviews{margin-top:56px;text-align:left;}
+.sr-reviews-title{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:center;margin-bottom:20px;}
+.sr-reviews-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.sr-review{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;}
+.sr-review-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sr-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#6ab023,#29a8c4);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:white;flex-shrink:0;}
+.sr-reviewer{flex:1;}
+.sr-rname{font-size:13px;font-weight:600;color:white;display:block;}
+.sr-rloc{font-size:11px;color:rgba(255,255,255,.3);display:block;}
+.sr-stars{color:#f7a600;font-size:12px;letter-spacing:1px;margin-bottom:8px;}
+.sr-rtext{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;}
+.sr-rdate{font-size:11px;color:rgba(255,255,255,.2);margin-top:8px;display:block;}
+
+/* ── QUIZ (même fond que landing) ── */
+.sr-quiz{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0f1a10;z-index:999999;overflow-y:auto;flex-direction:column;}
+.sr-quiz.open{display:flex;}
+.sr-topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;background:#0f1a10;}
+.sr-topbar img{height:38px;width:auto;}
+.sr-close{width:34px;height:34px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:50%;color:rgba(255,255,255,.5);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:inherit;}
+.sr-close:hover{background:rgba(255,255,255,.13);color:white;}
+.sr-prog-wrap{padding:14px 32px 0;flex-shrink:0;background:#0f1a10;}
+.sr-track{height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;}
+.sr-fill{height:100%;background:linear-gradient(90deg,#29a8c4,#6ab023);border-radius:3px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%;}
+.sr-prog-meta{display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
+.sr-prog-lbl{font-size:12px;color:rgba(255,255,255,.3);font-weight:500;}
+.sr-prog-pct{font-size:12px;color:#6ab023;font-weight:600;}
+.sr-body{flex:1;display:flex;align-items:center;justify-content:center;padding:36px 24px 56px;background:#0f1a10;}
+.sr-qwrap{width:100%;max-width:540px;}
+.sr-q{display:none;}
+.sr-q.active{display:block;animation:slideIn .3s cubic-bezier(.4,0,.2,1) both;}
+.sr-q.back{animation:slideBack .3s cubic-bezier(.4,0,.2,1) both;}
+@keyframes slideIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideBack{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
+.sr-section{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#29a8c4;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.sr-sdot{width:4px;height:4px;background:#29a8c4;border-radius:50%;}
+.sr-qtitle{font-family:'Fraunces',serif;font-size:clamp(24px,4.5vw,36px);font-weight:700;color:white;line-height:1.15;margin-bottom:8px;}
+.sr-qsub{font-size:14px;color:rgba(255,255,255,.38);margin-bottom:24px;line-height:1.55;}
+.sr-list{display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
+.sr-grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:24px;}
+.sr-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:24px;}
+.sr-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:11px;color:rgba(255,255,255,.75);font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;text-align:left;transition:all .18s;width:100%;position:relative;}
+.sr-opt:hover{border-color:rgba(106,176,35,.5);background:rgba(106,176,35,.09);color:white;transform:translateX(3px);}
+.sr-opt.sel{border-color:#6ab023;background:rgba(106,176,35,.12);color:white;}
+.sr-oi{font-size:18px;width:26px;text-align:center;flex-shrink:0;}
+.sr-ol{flex:1;}
+.sr-os{font-size:11px;color:rgba(255,255,255,.35);display:block;margin-top:2px;font-weight:400;}
+.sr-opt.sel .sr-os{color:rgba(255,255,255,.6);}
+.sr-ck{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;transition:all .18s;color:transparent;margin-left:auto;}
+.sr-opt.sel .sr-ck{background:#6ab023;border-color:#6ab023;color:white;}
+.sr-opt.multi .sr-ck{border-radius:5px;}
+.sr-input{width:100%;padding:15px 18px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:11px;color:white;font-size:17px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;margin-bottom:10px;display:block;}
+.sr-input::placeholder{color:rgba(255,255,255,.25);}
+.sr-input:focus{border-color:#6ab023;background:rgba(106,176,35,.06);}
+.sr-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.sr-slider-wrap{margin-bottom:24px;}
+.sr-slider-val{font-family:'Fraunces',serif;font-size:42px;font-weight:900;color:#6ab023;text-align:center;margin-bottom:8px;line-height:1;}
+.sr-slider-val span{font-size:20px;color:rgba(255,255,255,.4);font-family:'DM Sans',sans-serif;font-weight:400;}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:4px;border-radius:4px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#6ab023;border:3px solid #0f1a10;box-shadow:0 0 0 2px #6ab023;cursor:pointer;}
+.sr-slider-lbls{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:rgba(255,255,255,.3);}
+.sr-consent{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;margin-bottom:20px;cursor:pointer;}
+.sr-consent input[type=checkbox]{width:16px;height:16px;accent-color:#6ab023;flex-shrink:0;margin-top:2px;cursor:pointer;}
+.sr-consent label{font-size:12px;color:rgba(255,255,255,.35);line-height:1.55;cursor:pointer;}
+.sr-nav{display:flex;align-items:center;gap:10px;margin-top:6px;}
+.sr-prev{width:46px;height:46px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:11px;color:rgba(255,255,255,.45);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
+.sr-prev:hover{background:rgba(255,255,255,.1);color:white;}
+.sr-prev:disabled{opacity:.2;cursor:not-allowed;pointer-events:none;}
+.sr-next{flex:1;padding:14px;background:#6ab023;color:white;border:none;border-radius:11px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;box-shadow:0 4px 16px rgba(106,176,35,.25);}
+.sr-next:hover{background:#4e8118;transform:translateY(-1px);}
+.sr-submit{flex:1;padding:14px;background:linear-gradient(135deg,#6ab023,#29a8c4);color:white;border:none;border-radius:11px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;}
+.sr-submit:hover{filter:brightness(1.1);transform:translateY(-1px);}
+.sr-hint{font-size:11px;color:rgba(255,255,255,.18);text-align:center;margin-top:12px;}
+
+/* ── SUCCESS ── */
+.sr-success{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;flex:1;}
+.sr-success.show{display:flex;}
+.sr-success-ring{width:72px;height:72px;border-radius:50%;background:rgba(106,176,35,.12);border:2px solid rgba(106,176,35,.35);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both;}
+@keyframes popIn{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+.sr-success h2{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:white;margin-bottom:10px;}
+.sr-success p{font-size:15px;color:rgba(255,255,255,.45);max-width:400px;line-height:1.6;margin-bottom:28px;}
+.sr-success p .hl{color:#6ab023;font-weight:600;}
+.sr-insta-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:white;font-size:15px;font-weight:700;padding:16px 32px;border-radius:12px;text-decoration:none;transition:all .25s;margin-bottom:28px;box-shadow:0 4px 20px rgba(253,29,29,.3);}
+.sr-insta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(253,29,29,.45);filter:brightness(1.1);}
+.sr-insta-icon{font-size:20px;}
+.sr-steps{display:flex;flex-direction:column;gap:9px;width:100%;max-width:420px;}
+.sr-step{display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:11px;text-align:left;}
+.sr-step-icon{font-size:18px;width:26px;text-align:center;flex-shrink:0;}
+.sr-step-title{font-size:13px;font-weight:600;color:white;margin-bottom:1px;}
+.sr-step-desc{font-size:12px;color:rgba(255,255,255,.35);}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+.shake{animation:shake .4s ease !important;}
+@media(max-width:640px){
+  .sr-reviews-grid{grid-template-columns:1fr;}
+  .sr-grid2,.sr-grid3{grid-template-columns:1fr;}
+  .sr-row2{grid-template-columns:1fr;}
+  .sr-stats{flex-direction:column;}
+  .sr-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);}
+  .sr-stat:last-child{border-bottom:none;}
+  .sr-topbar,.sr-prog-wrap{padding-left:20px;padding-right:20px;}
+  .sr-landing{padding:60px 24px;}
+}
+</style>
+
+<!-- ═══ LANDING ═══ -->
+<div class="sr-landing">
+  <div class="sr-inner">
+
+    <div class="sr-logo">
+      <img src="https://i.postimg.cc/j5CtNN5L/image-(62)-(1).png" alt="Solutech Renov">
+    </div>
+
+    <div class="sr-tag"><div class="sr-dot"></div>Nouveaux barèmes 2026</div>
+
+    <h1>Vos travaux financés<br>jusqu'à <em>90%</em><br>par l'État.</h1>
+
+    <p class="sr-desc">Répondez à <strong>quelques questions</strong> et recevez une estimation personnalisée — <strong>MaPrimeRénov', PTZ, CEE</strong> et aides locales.</p>
+
+    <button class="sr-btn" onclick="srOpenQuiz()">🔒 Estimer mes aides gratuitement</button>
+
+    <div class="sr-trust">
+      <span>✓ Gratuit & sans engagement</span>
+      <span>✓ Réponse sous 24h</span>
+      <span>✓ RGPD</span>
+    </div>
+
+    <div class="sr-stats">
+      <div class="sr-stat"><span class="num">500+</span><span class="lbl">Dossiers traités</span></div>
+      <div class="sr-stat"><span class="num">10M€</span><span class="lbl">Aides obtenues</span></div>
+      <div class="sr-stat"><span class="num">4.9★</span><span class="lbl">Note client</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ QUIZ ═══ -->
+<div class="sr-quiz" id="srQuiz">
+  <div class="sr-topbar">
+    <img src="https://i.postimg.cc/j5CtNN5L/image-(62)-(1).png" alt="Solutech Renov">
+    <button class="sr-close" onclick="srCloseQuiz()">✕</button>
+  </div>
+  <div class="sr-prog-wrap">
+    <div class="sr-track"><div class="sr-fill" id="srFill"></div></div>
+    <div class="sr-prog-meta">
+      <span class="sr-prog-lbl" id="srLbl">Question 1 sur 11</span>
+      <span class="sr-prog-pct" id="srPct">0%</span>
+    </div>
+  </div>
+  <div class="sr-body">
+    <div class="sr-qwrap" id="srWrap">
+
+      <div class="sr-q active" id="srq1">
+        <div class="sr-section"><div class="sr-sdot"></div>Votre logement · 1/4</div>
+        <h2 class="sr-qtitle">Quel est le type<br>de votre logement ?</h2>
+        <p class="sr-qsub">Maison ou appartement — les aides éligibles diffèrent.</p>
+        <div class="sr-grid2">
+          <button class="sr-opt" onclick="srSelectNext(this,'logement','maison',1)"><span class="sr-oi">🏠</span><span class="sr-ol">Maison individuelle</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'logement','appart',1)"><span class="sr-oi">🏢</span><span class="sr-ol">Appartement</span><span class="sr-ck">✓</span></button>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" disabled onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(1)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq2">
+        <div class="sr-section"><div class="sr-sdot"></div>Votre logement · 2/4</div>
+        <h2 class="sr-qtitle">Vous êtes…</h2>
+        <p class="sr-qsub">Certaines aides sont réservées aux propriétaires occupants.</p>
+        <div class="sr-list">
+          <button class="sr-opt" onclick="srSelectNext(this,'statut','proprio_occ',2)"><span class="sr-oi">🔑</span><span class="sr-ol">Propriétaire occupant<span class="sr-os">Vous habitez le logement</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'statut','proprio_bail',2)"><span class="sr-oi">📋</span><span class="sr-ol">Propriétaire bailleur<span class="sr-os">Vous louez le logement</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'statut','locataire',2)"><span class="sr-oi">🏡</span><span class="sr-ol">Locataire<span class="sr-os">Vous êtes en location</span></span><span class="sr-ck">✓</span></button>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(2)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq3">
+        <div class="sr-section"><div class="sr-sdot"></div>Votre logement · 3/4</div>
+        <h2 class="sr-qtitle">Quand a été construit<br>votre logement ?</h2>
+        <p class="sr-qsub">Détermine votre éligibilité à l'Éco-PTZ.</p>
+        <div class="sr-list">
+          <button class="sr-opt" onclick="srSelectNext(this,'construction','avant1975',3)"><span class="sr-oi">🏚️</span><span class="sr-ol">Avant 1975<span class="sr-os">Potentiel très élevé</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'construction','1975_1990',3)"><span class="sr-oi">🏘️</span><span class="sr-ol">Entre 1975 et 1990<span class="sr-os">Bon potentiel</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'construction','1990_2005',3)"><span class="sr-oi">🏠</span><span class="sr-ol">Entre 1990 et 2005<span class="sr-os">Potentiel modéré</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'construction','apres2005',3)"><span class="sr-oi">🏡</span><span class="sr-ol">Après 2005<span class="sr-os">Logement récent</span></span><span class="sr-ck">✓</span></button>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(3)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq4">
+        <div class="sr-section"><div class="sr-sdot"></div>Votre logement · 4/4</div>
+        <h2 class="sr-qtitle">Quelle est la surface<br>de votre logement ?</h2>
+        <p class="sr-qsub">Le montant des aides est calculé au m².</p>
+        <div class="sr-slider-wrap">
+          <div class="sr-slider-val" id="srSurfVal">85 <span>m²</span></div>
+          <input type="range" id="srSurf" min="20" max="300" value="85" step="5" oninput="srUpdateSlider()">
+          <div class="sr-slider-lbls"><span>20 m²</span><span>300 m²</span></div>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(4)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq5">
+        <div class="sr-section"><div class="sr-sdot"></div>Vos travaux · 1/3</div>
+        <h2 class="sr-qtitle">Quel est votre chauffage<br>actuel ?</h2>
+        <p class="sr-qsub">Le remplacement fioul/gaz ouvre droit aux primes maximales.</p>
+        <div class="sr-grid2">
+          <button class="sr-opt" onclick="srSelectNext(this,'chauffage_actuel','fioul',5)"><span class="sr-oi">🛢️</span><span class="sr-ol">Chaudière fioul<span class="sr-os">Prime maximale</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'chauffage_actuel','gaz',5)"><span class="sr-oi">🔥</span><span class="sr-ol">Chaudière gaz<span class="sr-os">Éligible MPR</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'chauffage_actuel','electrique',5)"><span class="sr-oi">⚡</span><span class="sr-ol">Électrique</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'chauffage_actuel','pac',5)"><span class="sr-oi">🌡️</span><span class="sr-ol">Pompe à chaleur</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'chauffage_actuel','bois',5)"><span class="sr-oi">🪵</span><span class="sr-ol">Bois / poêle</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'chauffage_actuel','autre',5)"><span class="sr-oi">❓</span><span class="sr-ol">Je ne sais pas</span><span class="sr-ck">✓</span></button>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(5)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq6">
+        <div class="sr-section"><div class="sr-sdot"></div>Vos travaux · 2/3</div>
+        <h2 class="sr-qtitle">Quels travaux<br>envisagez-vous ?</h2>
+        <p class="sr-qsub">Plusieurs choix possibles — aides cumulables.</p>
+        <div class="sr-grid2">
+          <button class="sr-opt multi" onclick="srToggle(this,'travaux','isolation')"><span class="sr-oi">🧱</span><span class="sr-ol">Isolation</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt multi" onclick="srToggle(this,'travaux','chauffage')"><span class="sr-oi">🔥</span><span class="sr-ol">Chauffage / PAC</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt multi" onclick="srToggle(this,'travaux','fenetres')"><span class="sr-oi">🪟</span><span class="sr-ol">Fenêtres / Portes</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt multi" onclick="srToggle(this,'travaux','vmc')"><span class="sr-oi">💨</span><span class="sr-ol">Ventilation VMC</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt multi" onclick="srToggle(this,'travaux','solaire')"><span class="sr-oi">☀️</span><span class="sr-ol">Énergies renouvelables</span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt multi" onclick="srToggle(this,'travaux','autre')"><span class="sr-oi">🔧</span><span class="sr-ol">Autre</span><span class="sr-ck">✓</span></button>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(6)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq7">
+        <div class="sr-section"><div class="sr-sdot"></div>Vos travaux · 3/3</div>
+        <h2 class="sr-qtitle">Connaissez-vous votre<br>étiquette DPE ?</h2>
+        <p class="sr-qsub">Si vous ne savez pas, pas de problème.</p>
+        <div class="sr-grid3">
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','A',7)" style="flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;"><span style="font-size:22px;font-weight:900;color:#00a651;">A</span><span style="font-size:10px;color:rgba(255,255,255,.4);">Excellent</span><span class="sr-ck" style="position:absolute;top:6px;right:6px;margin:0;">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','B',7)" style="flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;"><span style="font-size:22px;font-weight:900;color:#51b848;">B</span><span style="font-size:10px;color:rgba(255,255,255,.4);">Bon</span><span class="sr-ck" style="position:absolute;top:6px;right:6px;margin:0;">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','C',7)" style="flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;"><span style="font-size:22px;font-weight:900;color:#b2d235;">C</span><span style="font-size:10px;color:rgba(255,255,255,.4);">Moyen</span><span class="sr-ck" style="position:absolute;top:6px;right:6px;margin:0;">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','D',7)" style="flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;"><span style="font-size:22px;font-weight:900;color:#ffcc00;">D</span><span style="font-size:10px;color:rgba(255,255,255,.4);">Assez moyen</span><span class="sr-ck" style="position:absolute;top:6px;right:6px;margin:0;">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','E',7)" style="flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;"><span style="font-size:22px;font-weight:900;color:#f7a600;">E</span><span style="font-size:10px;color:rgba(255,255,255,.4);">Mauvais</span><span class="sr-ck" style="position:absolute;top:6px;right:6px;margin:0;">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','F',7)" style="flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;"><span style="font-size:22px;font-weight:900;color:#e8601c;">F</span><span style="font-size:10px;color:rgba(255,255,255,.4);">Très mauvais</span><span class="sr-ck" style="position:absolute;top:6px;right:6px;margin:0;">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','G',7)" style="flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;"><span style="font-size:22px;font-weight:900;color:#cc0000;">G</span><span style="font-size:10px;color:rgba(255,255,255,.4);">Passoire</span><span class="sr-ck" style="position:absolute;top:6px;right:6px;margin:0;">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'dpe','inconnu',7)" style="grid-column:span 2;"><span class="sr-oi">❓</span><span class="sr-ol">Je ne sais pas</span><span class="sr-ck">✓</span></button>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(7)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq8">
+        <div class="sr-section"><div class="sr-sdot"></div>Votre situation · 1/2</div>
+        <h2 class="sr-qtitle">Quelle est la tranche<br>de revenus de votre foyer ?</h2>
+        <p class="sr-qsub">Principal critère pour calculer MaPrimeRénov'.</p>
+        <div class="sr-list">
+          <button class="sr-opt" onclick="srSelectNext(this,'revenus','tres_modestes',8)"><span class="sr-oi">💚</span><span class="sr-ol">Très modestes<span class="sr-os">Moins de 21 000 €/an — aide jusqu'à 90%</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'revenus','modestes',8)"><span class="sr-oi">💛</span><span class="sr-ol">Modestes<span class="sr-os">21 000 à 31 000 €/an — aide jusqu'à 70%</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'revenus','intermediaires',8)"><span class="sr-oi">🟠</span><span class="sr-ol">Intermédiaires<span class="sr-os">31 000 à 43 000 €/an — aide jusqu'à 50%</span></span><span class="sr-ck">✓</span></button>
+          <button class="sr-opt" onclick="srSelectNext(this,'revenus','superieurs',8)"><span class="sr-oi">🔵</span><span class="sr-ol">Supérieurs<span class="sr-os">Plus de 43 000 €/an — aide jusqu'à 30%</span></span><span class="sr-ck">✓</span></button>
+        </div>
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(8)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq9">
+        <div class="sr-section"><div class="sr-sdot"></div>Votre situation · 2/2</div>
+        <h2 class="sr-qtitle">Quel est le code postal<br>du logement ?</h2>
+        <p class="sr-qsub">Des aides locales s'ajoutent selon votre zone.</p>
+        <input type="text" class="sr-input" id="srCp" placeholder="ex : 31000" maxlength="5" oninput="this.value=this.value.replace(/\D/g,'')">
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(9)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq10">
+        <div class="sr-section"><div class="sr-sdot"></div>Vos coordonnées · 1/2</div>
+        <h2 class="sr-qtitle">Comment vous<br>appelez-vous ?</h2>
+        <p class="sr-qsub">Pour personnaliser votre rapport.</p>
+        <div class="sr-row2">
+          <input type="text" class="sr-input" id="srPrenom" placeholder="Prénom">
+          <input type="text" class="sr-input" id="srNom" placeholder="Nom">
+        </div>
+        <input type="tel" class="sr-input" id="srTel" placeholder="Téléphone">
+        <div class="sr-nav"><button class="sr-prev" onclick="srPrev()">←</button><button class="sr-next" onclick="srNext(10)">Continuer →</button></div>
+        <p class="sr-hint">Appuyez sur Entrée pour continuer</p>
+      </div>
+
+      <div class="sr-q" id="srq11">
+        <div class="sr-section"><div class="sr-sdot"></div>Dernière étape !</div>
+        <h2 class="sr-qtitle">Où envoyer<br>votre estimation ?</h2>
+        <p class="sr-qsub">Votre rapport personnalisé vous sera envoyé sous 24h.</p>
+        <input type="email" class="sr-input" id="srEmail" placeholder="votre@email.fr">
+        <div class="sr-consent">
+          <input type="checkbox" id="srConsent">
+          <label for="srConsent">J'accepte d'être contacté(e) par Solutech Renov pour recevoir mon estimation. Données confidentielles, conformément au RGPD.</label>
+        </div>
+        <div class="sr-nav">
+          <button class="sr-prev" onclick="srPrev()">←</button>
+          <button class="sr-submit" onclick="srSubmit()">🎯 Recevoir mon estimation gratuite</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="sr-success" id="srSuccess">
+      <div class="sr-success-ring">🎉</div>
+      <h2>C'est tout bon !</h2>
+      <p>Votre dossier a été reçu par <strong style="color:rgba(255,255,255,.8)">Solutech Renov</strong>. Un expert va analyser vos informations et vous envoyer votre <span class="hl">estimation sous 24h</span>.</p>
+
+      <a href="https://www.instagram.com/solutech_renovation/" target="_blank" class="sr-insta-btn">
+        <span class="sr-insta-icon">📸</span>
+        Voir nos travaux réalisés
+      </a>
+
+      <!-- Avis clients sur la page de confirmation -->
+      <div class="sr-reviews" style="width:100%;max-width:520px;margin-bottom:28px;">
+        <div class="sr-reviews-title">Ce que disent nos clients</div>
+        <div class="sr-reviews-grid" style="grid-template-columns:1fr;">
+
+          <div class="sr-review">
+            <div class="sr-review-top">
+              <div class="sr-avatar">M</div>
+              <div class="sr-reviewer">
+                <span class="sr-rname">Martine B.</span>
+                <span class="sr-rloc">Toulouse (31)</span>
+              </div>
+            </div>
+            <div class="sr-stars">★★★★★</div>
+            <p class="sr-rtext">Très sérieux, ils ont géré tout le dossier MaPrimeRénov' de A à Z. On a obtenu 14 800€ d'aides pour notre pompe à chaleur. Je recommande vivement !</p>
+            <span class="sr-rdate">Il y a 3 semaines</span>
+          </div>
+
+          <div class="sr-review">
+            <div class="sr-review-top">
+              <div class="sr-avatar" style="background:linear-gradient(135deg,#29a8c4,#1a2744);">P</div>
+              <div class="sr-reviewer">
+                <span class="sr-rname">Philippe D.</span>
+                <span class="sr-rloc">Bordeaux (33)</span>
+              </div>
+            </div>
+            <div class="sr-stars">★★★★★</div>
+            <p class="sr-rtext">Maison de 1968 en classe G, aujourd'hui en B. L'équipe a été au top du début à la fin. Les travaux ont été financés à 87%. Impeccable.</p>
+            <span class="sr-rdate">Il y a 1 mois</span>
+          </div>
+
+          <div class="sr-review">
+            <div class="sr-review-top">
+              <div class="sr-avatar" style="background:linear-gradient(135deg,#6ab023,#0f1a10);">S</div>
+              <div class="sr-reviewer">
+                <span class="sr-rname">Sophie L.</span>
+                <span class="sr-rloc">Montpellier (34)</span>
+              </div>
+            </div>
+            <div class="sr-stars">★★★★★</div>
+            <p class="sr-rtext">J'étais sceptique au départ mais le conseiller a été très transparent sur les aides. 11 000€ récupérés pour l'isolation des combles et les fenêtres. Merci !</p>
+            <span class="sr-rdate">Il y a 2 mois</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="sr-steps">
+        <div class="sr-step"><span class="sr-step-icon">📧</span><div><div class="sr-step-title">Email de confirmation</div><div class="sr-step-desc">Dans votre boîte mail d'ici quelques minutes</div></div></div>
+        <div class="sr-step"><span class="sr-step-icon">🔍</span><div><div class="sr-step-title">Analyse de votre dossier</div><div class="sr-step-desc">Nos experts calculent vos aides exactes</div></div></div>
+        <div class="sr-step"><span class="sr-step-icon">📞</span><div><div class="sr-step-title">Appel de votre conseiller</div><div class="sr-step-desc">Sous 24h pour vous présenter l'estimation</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const SR_TOTAL = 11;
+const SR_URL = "https://script.google.com/macros/s/AKfycbz7-TjgvQpPp5K7lEi47xGF7pwrtGX_VSw4JSSxz-u9Qo-aTtgWgMgfMuaL-m84Yr7v/exec";
+let srCurrent = 1;
+let srAnswers = {};
+let srMulti = { travaux: [] };
+
+function srOpenQuiz() {
+  document.getElementById('srQuiz').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  srUpdateProg();
+}
+function srCloseQuiz() {
+  document.getElementById('srQuiz').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function srUpdateProg() {
+  const pct = Math.round(((srCurrent - 1) / SR_TOTAL) * 100);
+  document.getElementById('srFill').style.width = pct + '%';
+  document.getElementById('srLbl').textContent = 'Question ' + srCurrent + ' sur ' + SR_TOTAL;
+  document.getElementById('srPct').textContent = pct + '%';
+}
+function srUpdateSlider() {
+  const val = document.getElementById('srSurf').value;
+  document.getElementById('srSurfVal').innerHTML = val + ' <span>m\u00b2</span>';
+  const pct = ((val - 20) / (300 - 20)) * 100;
+  document.getElementById('srSurf').style.background = 'linear-gradient(to right,#6ab023 0%,#6ab023 ' + pct + '%,rgba(255,255,255,.15) ' + pct + '%,rgba(255,255,255,.15) 100%)';
+}
+function srSelectNext(btn, field, value, qNum) {
+  const c = btn.closest('.sr-list,.sr-grid2,.sr-grid3');
+  c.querySelectorAll('.sr-opt').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+  srAnswers[field] = value;
+  setTimeout(() => srNext(qNum), 220);
+}
+function srToggle(btn, field, value) {
+  btn.classList.toggle('sel');
+  if (!srMulti[field]) srMulti[field] = [];
+  const idx = srMulti[field].indexOf(value);
+  if (idx === -1) srMulti[field].push(value);
+  else srMulti[field].splice(idx, 1);
+}
+function srValidate(q) {
+  if (q===1 && !srAnswers.logement) return false;
+  if (q===2 && !srAnswers.statut) return false;
+  if (q===3 && !srAnswers.construction) return false;
+  if (q===4) { srAnswers.surface = document.getElementById('srSurf').value; return true; }
+  if (q===5 && !srAnswers.chauffage_actuel) return false;
+  if (q===6 && srMulti.travaux.length===0) return false;
+  if (q===7 && !srAnswers.dpe) return false;
+  if (q===8 && !srAnswers.revenus) return false;
+  if (q===9) { const cp=document.getElementById('srCp').value.trim(); if(!cp||cp.length<5) return false; srAnswers.codepostal=cp; }
+  if (q===10) { const p=document.getElementById('srPrenom').value.trim(),n=document.getElementById('srNom').value.trim(),t=document.getElementById('srTel').value.trim(); if(!p||!n||!t) return false; srAnswers.prenom=p;srAnswers.nom=n;srAnswers.telephone=t; }
+  return true;
+}
+function srNext(from) {
+  if (from>=SR_TOTAL) return;
+  if (!srValidate(from)) { srShake(from); return; }
+  srGoTo(from+1, false);
+}
+function srPrev() {
+  if (srCurrent<=1) return;
+  srGoTo(srCurrent-1, true);
+}
+function srGoTo(target, isBack) {
+  const old = document.getElementById('srq'+srCurrent);
+  old.classList.remove('active','back');
+  old.style.display='none';
+  srCurrent = target;
+  const next = document.getElementById('srq'+srCurrent);
+  next.style.display='block';
+  next.classList.remove('active','back');
+  void next.offsetWidth;
+  next.classList.add('active');
+  if (isBack) next.classList.add('back');
+  const pb = next.querySelector('.sr-prev');
+  if (pb) pb.disabled = srCurrent===1;
+  srUpdateProg();
+  document.getElementById('srQuiz').scrollTo({top:0,behavior:'smooth'});
+}
+function srShake(q) {
+  const el = document.getElementById('srq'+q);
+  el.classList.remove('shake');
+  void el.offsetWidth;
+  el.classList.add('shake');
+  setTimeout(()=>el.classList.remove('shake'),500);
+}
+function srSubmit() {
+  const email = document.getElementById('srEmail').value.trim();
+  const consent = document.getElementById('srConsent').checked;
+  if (!email||!email.includes('@')) { srShake(11); return; }
+  if (!consent) { srShake(11); return; }
+  srAnswers.email = email;
+  const payload = {...srAnswers, travaux: srMulti.travaux};
+
+  // Afficher succès immédiatement
+  document.getElementById('srWrap').style.display='none';
+  document.getElementById('srSuccess').classList.add('show');
+  document.getElementById('srFill').style.width='100%';
+  document.getElementById('srLbl').textContent='Dossier envoyé ✓';
+  document.getElementById('srPct').textContent='100%';
+
+  // Envoi via formulaire caché (contourne CORS à 100%)
+  const form = document.createElement('form');
+  form.method = 'GET';
+  form.action = SR_URL;
+  form.target = 'sr-hidden-frame';
+  form.style.display = 'none';
+
+  // Ajouter chaque champ
+  const addField = (name, value) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
+  };
+
+  Object.keys(payload).forEach(key => {
+    const val = Array.isArray(payload[key]) ? payload[key].join(',') : payload[key];
+    addField(key, val || '');
+  });
+
+  // Iframe cachée pour éviter la redirection
+  let iframe = document.getElementById('sr-hidden-frame');
+  if (!iframe) {
+    iframe = document.createElement('iframe');
+    iframe.name = 'sr-hidden-frame';
+    iframe.id = 'sr-hidden-frame';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+  console.log('📊 Lead envoyé via formulaire caché', payload);
+}
+document.addEventListener('keydown',e=>{
+  if (!document.getElementById('srQuiz').classList.contains('open')) return;
+  if (e.key==='Enter') { srCurrent<SR_TOTAL ? srNext(srCurrent) : srSubmit(); }
+  if (e.key==='Escape') srCloseQuiz();
+});
+srUpdateSlider();
+</script>
